@@ -1,0 +1,33 @@
+.modal {
+   position: fixed;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   background-color: #101010;
+   color: rgb(253, 253, 253);
+   border-radius: 15px;
+   padding: 50px;
+}
+
+.modal_inner {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 30px;
+}
+
+.modal_inner label {
+   color: white;
+}
+
+.modal_inner input {
+   margin-bottom: 30px;
+   margin-left: 15px;
+}
+
+.modal_push {
+   margin-top: 20px;
+   color: #000;
+   background-color: #fff;
+   cursor: pointer;
+   padding: 10px 20px;
+}

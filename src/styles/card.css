@@ -1,0 +1,25 @@
+.user_card {
+   border: 1px solid #E5E5E5;
+   padding: 20px;
+   width: 239px;
+   min-height: 139px;
+   margin-top: 20px;
+   margin-right: 15px;
+   transition: .2s linear;
+}
+
+.user_card button {
+   color: white;
+   background-color: #000;
+   cursor: pointer;
+   padding: 10px 20px;
+   margin-top: 60px;
+}
+
+.user_card p {
+   opacity: 0.5;
+}
+
+.user_card:hover {
+   border: 1px solid #000000;
+}

@@ -1,0 +1,16 @@
+.posts_title {
+   display: flex;
+   justify-content: space-between;
+}
+
+.posts_blog {
+   margin-top: 15px;
+   border: 1px solid #000000;
+   max-width: 490px;
+   padding: 20px 35px;
+   min-height: 143px;
+}
+
+.posts h1 {
+   font-size: 35px;
+}

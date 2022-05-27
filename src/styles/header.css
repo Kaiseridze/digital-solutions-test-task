@@ -1,0 +1,24 @@
+.header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: black;
+   padding: 20px;
+   margin-bottom: 37px;
+}
+
+.header_buttons button {
+   margin-left: 15px;
+   font-family: 'Raleway', sans-serif;
+   font-weight: 600;
+   padding: 10px 0;
+   background-color: white;
+   font-weight: 700;
+   min-width: 205px;
+}
+
+.header_logo {
+   text-transform: uppercase;
+   font-weight: bold;
+   color: white;
+}
