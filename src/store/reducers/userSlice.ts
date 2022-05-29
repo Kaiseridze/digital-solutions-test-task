@@ -17,7 +17,7 @@ export const userSlice = createSlice({
 	name: "users",
 	initialState,
 	reducers: {
-		usersFetching(state, action) {
+		usersFetching(state) {
          state.isLoading = true;
 		},
 		usersFetchingSuccess(state, action: PayloadAction<IUser[]>) {

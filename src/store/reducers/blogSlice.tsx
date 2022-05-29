@@ -17,7 +17,7 @@ export const blogSlice = createSlice({
 	name: "blog",
 	initialState,
 	reducers: {
-		blogFetch(state, action: PayloadAction<boolean>) {
+		blogFetch(state) {
 			state.isLoading = true
 		},
 		blogSuccesFetch(state, action: PayloadAction<IPost>) {

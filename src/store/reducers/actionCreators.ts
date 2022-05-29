@@ -9,7 +9,7 @@ import { commentsSlice } from './commentsSlice'
 
 export const fetchUsers = () => async (dispatch: AppDispatch) => {
 	try {
-		dispatch(userSlice.actions.usersFetching)
+		dispatch(userSlice.actions.usersFetching())
 		const response = await axios.get<IUser[]>(
 			"https://jsonplaceholder.typicode.com/users"
 		)
@@ -22,7 +22,7 @@ export const fetchUsers = () => async (dispatch: AppDispatch) => {
 export const fetchMember =
 	(id: string | any) => async (dispatch: AppDispatch) => {
 		try {
-			dispatch(memberSlice.actions.memberFetching)
+			dispatch(memberSlice.actions.memberFetching())
 			const response = await axios.get<IUser>(
 				`https://jsonplaceholder.typicode.com/users/${id}`
 			)
@@ -35,7 +35,7 @@ export const fetchMember =
 export const fetchPosts =
 	(id: string | any) => async (dispatch: AppDispatch) => {
 		try {
-			dispatch(postSlice.actions.postsFetching)
+			dispatch(postSlice.actions.postsFetching())
 			const response = await axios.get<IPost[]>(
 				`https://jsonplaceholder.typicode.com/users/${id}/posts?_limit=2`
 			)
@@ -48,7 +48,7 @@ export const fetchPosts =
 export const fetchAllPosts =
 	(id: string | any) => async (dispatch: AppDispatch) => {
 		try {
-			dispatch(postSlice.actions.postsFetching)
+			dispatch(postSlice.actions.postsFetching())
 			const response = await axios.get<IPost[]>(
 				`https://jsonplaceholder.typicode.com/users/${id}/posts`
 			)
@@ -61,7 +61,7 @@ export const fetchAllPosts =
 export const fetchBlog =
 	(id: string | any) => async (dispatch: AppDispatch) => {
 		try {
-			dispatch(blogSlice.actions.blogFetch)
+			dispatch(blogSlice.actions.blogFetch())
 			const response = await axios.get<IPost>(
 				`https://jsonplaceholder.typicode.com/posts/${id}`
 			)
@@ -76,4 +76,8 @@ export const fetchComments = () => async (dispatch: AppDispatch) => {
 		`https://jsonplaceholder.typicode.com/comments?_limit=20`
 	)
 	dispatch(commentsSlice.actions.commentsFetch(response.data))
+}
+
+export const commentsAdd = (body: any) => (dispatch: AppDispatch) => {
+	dispatch(commentsSlice.actions.commentsAdd(body))
 }

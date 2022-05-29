@@ -1,5 +1,7 @@
 import React, { useState } from "react"
+import { useAppDispatch, useAppSelector } from "../hooks/redux"
 import '../styles/modal.css'
+import {commentsAdd} from '../store/reducers/actionCreators'
 
 interface IModal {
 	setModal: Function
@@ -10,6 +12,9 @@ function Modal({ setModal, modal }: IModal) {
 	const [emailValue, setEmailValue] = useState("")
 	const [nameValue, setNameValue] = useState("")
 	const [textValue, setTextValue] = useState("")
+
+	const dispatch = useAppDispatch()
+	const {comments} = useAppSelector(state => state.commentsSlice)
 
 	const emailListener = (e: any) => {
 		setEmailValue(e.target.value)
@@ -22,12 +27,15 @@ function Modal({ setModal, modal }: IModal) {
    }
 
    const pushComment = () => {
-      if (emailValue && nameValue && textValue) {
-         setModal(!modal)
-			console.log(
-				`Email: ${emailValue}`,
-				`Name: ${nameValue}`,
-				`Text: ${textValue}`
+		if (emailValue && nameValue && textValue) {
+			setModal(!modal)
+			dispatch(
+				commentsAdd({
+					email: emailValue,
+					name: nameValue,
+					body: textValue,
+					id: Math.random().toString(36).substring(2, 9),
+		})
 			)
       }
       else {

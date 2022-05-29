@@ -17,7 +17,7 @@ export const memberSlice = createSlice({
 	name: "member",
 	initialState,
 	reducers: {
-		memberFetching(state, action) {
+		memberFetching(state) {
 			state.isLoading = true
 		},
 		memberFetchingSuccess(state, action: PayloadAction<IUser>) {

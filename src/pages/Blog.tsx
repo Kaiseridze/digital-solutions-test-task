@@ -10,7 +10,7 @@ const Blog = () => {
 	const [modal, setModal] = useState(false)
 	const dispatch = useAppDispatch()
 	const { postId } = useParams()
-	const { blog } = useAppSelector((state) => state.blogSlice)
+	const { blog, isLoading } = useAppSelector((state) => state.blogSlice)
 	const { comments } = useAppSelector((state) => state.commentsSlice)
 	useEffect(() => {
 		dispatch(fetchBlog(postId))
@@ -20,7 +20,11 @@ const Blog = () => {
 	return (
 		<div className='interface'>
 			<div className='blog'>
-				{<FullPost body={blog.body} title={blog.title} />}
+				{isLoading ? (
+					<h1>Идет загрузка</h1>
+				) : (
+					<FullPost body={blog.body} title={blog.title} />
+				)}
 				<h1>Комментарии</h1>
 				<div className='all_comments'>
 					{comments.map((comment) => (
