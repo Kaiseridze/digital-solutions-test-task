@@ -15,4 +15,4 @@ Functional:
 1. Display users
 2. Display posts of a specific user
 3. 20 test comments
-4. Ability to enter your data (After sending, they will be displayed in console.log)
+4. The ability to enter your data, they will be added to the comments
